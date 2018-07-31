@@ -4,7 +4,7 @@ class Fundaciones < ActiveRecord::Migration[5.2]
       t.integer :IdFundaciones
       t.text :NombreFundacion
       t.text :NitFundacion
-      enum TipoFundacion: { AM: 'adulto mayor', DR: 'drogadictos', NPI: 'niños primera infancia', AD: 'adolecentes', PV: 'poblacion vulnerable' }
+      #enum TipoFundacion: { AM: 'adulto mayor', DR: 'drogadictos', NPI: 'niños primera infancia', AD: 'adolecentes', PV: 'poblacion vulnerable' }
       #enum TipoFundacion: [ :adulto mayor, :drogadictos, :niños primera infancia, :adolecentes, :poblacion vulnerable ]
       t.datetime :FechaCreacion
       t.text :DirFundacion
@@ -14,9 +14,9 @@ class Fundaciones < ActiveRecord::Migration[5.2]
       t.decimal :TelFundacion
       t.decimal :CelFundacion
       t.text :CorreoFundacion
-      enum Estado: { A: 'Activo', I: 'Inactivo' }
+      #enum Estado: { A: 'Activo', I: 'Inactivo' }
       t.text :ImagenLogo
-      enum TipoCuenta: { A: 'Cuenta de Ahorros', C: 'Cuenta Corriente' }
+      #enum TipoCuenta: { A: 'Cuenta de Ahorros', C: 'Cuenta Corriente' }
       t.text :NumeroCuenta
       t.integer :IdBanco  
       t.text :Descripcion
