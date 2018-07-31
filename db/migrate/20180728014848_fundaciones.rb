@@ -1,11 +1,10 @@
 class Fundaciones < ActiveRecord::Migration[5.2]
   def change
     create_table :Fundaciones do |t|
-      t.integer :IdFundaciones
+      #t.integer :IdFundaciones
       t.text :NombreFundacion
       t.text :NitFundacion
       #enum TipoFundacion: { AM: 'adulto mayor', DR: 'drogadictos', NPI: 'niños primera infancia', AD: 'adolecentes', PV: 'poblacion vulnerable' }
-      #enum TipoFundacion: [ :adulto mayor, :drogadictos, :niños primera infancia, :adolecentes, :poblacion vulnerable ]
       t.datetime :FechaCreacion
       t.text :DirFundacion
       t.text :LatDirFundacion

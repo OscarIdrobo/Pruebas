@@ -1,10 +1,10 @@
 class Donacion < ActiveRecord::Migration[5.2]
   def change
     create_table :Donacion do |t|
-      t.integer :IdDonar
-      t.integer :IdTipoDonacion
-      t.integer :IdUsuarioDonador 
-      t.integer :IdFundacionaDonar 
+      #t.integer :IdDonar
+      #t.integer :IdTipoDonacion
+      #t.integer :IdUsuarioDonador 
+      #t.integer :IdFundacionaDonar 
       t.text :DireccionReclamarDonacion 
       t.text :Latituddirreclamardonacion 
       t.text :LongitudDirReclamarDonacion
