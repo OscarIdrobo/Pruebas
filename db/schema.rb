@@ -90,26 +90,17 @@ ActiveRecord::Schema.define(version: 2018_07_31_015516) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "cars", force: :cascade do |t|
-    t.string "nombre"
-    t.text "descripcion"
-    t.text "otrocampo"
+  create_table "Objeto", force: :cascade do |t|
+    t.integer "IdObjeto"
+    t.text "Nombre_Objeto"
+    t.text "Descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "elements", force: :cascade do |t|
-    t.string "nombre"
-    t.text "descripcion"
-    t.text "otrocampo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.text "descriptiondos"
+  create_table "TipoDonacion", force: :cascade do |t|
+    t.integer "IdTipoDonacion"
+    t.text "Desc_Tipo_Donacion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
