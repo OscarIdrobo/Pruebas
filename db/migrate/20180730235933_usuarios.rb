@@ -2,7 +2,7 @@ class Usuarios < ActiveRecord::Migration[5.2]
   def change
 
     create_table :usuarios do |t|
-      t.integer :Idusuarios
+      #t.integer :Idusuarios
       t.text :Nombre_usuario
       t.text :Apellido_usuario
       t.text :Tipo_documento
