@@ -18,4 +18,4 @@ class Usuarios < ActiveRecord::Migration[5.2]
       t.text :Rol
      end
   end
-end
+end 

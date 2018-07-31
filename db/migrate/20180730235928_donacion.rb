@@ -21,7 +21,7 @@ class Donacion < ActiveRecord::Migration[5.2]
       t.timestamps null: false
     end
   end
-end
+end 
 
 
   #idDonar INT NOT NULL DEFAULT nextval('idDonar'),
