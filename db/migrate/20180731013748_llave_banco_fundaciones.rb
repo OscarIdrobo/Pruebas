@@ -7,4 +7,4 @@ class LlaveBancoFundaciones < ActiveRecord::Migration[5.2]
     add_foreing_key Bancos, IdBanco, index: true #Llave foranea y union entre las tablas
 
   end
-end
+end 
