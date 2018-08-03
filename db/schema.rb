@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_31_015516) do
+ActiveRecord::Schema.define(version: 2018_08_03_035602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(version: 2018_07_31_015516) do
     t.text "NombreBanco"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "Carros", force: :cascade do |t|
+    t.text "Nombre_usuario"
+    t.text "Documento"
+    t.datetime "Fecha_creacion"
   end
 
   create_table "ConexionFundacionTipo", force: :cascade do |t|
@@ -75,19 +81,10 @@ ActiveRecord::Schema.define(version: 2018_07_31_015516) do
     t.index ["IdFundaciones_id"], name: "index_Fundaciones_on_IdFundaciones_id"
   end
 
-  create_table "Objeto", force: :cascade do |t|
-    t.integer "IdObjeto"
-    t.text "NombreObjeto"
-    t.text "Descripcion"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "TipoDonacion", force: :cascade do |t|
-    t.integer "IdTipoDonacion"
-    t.text "Desc_Tipo_Donacion"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "Lamparas", force: :cascade do |t|
+    t.text "Nombre_usuario"
+    t.text "Documento"
+    t.datetime "Fecha_creacion"
   end
 
   create_table "Objeto", force: :cascade do |t|
@@ -98,9 +95,53 @@ ActiveRecord::Schema.define(version: 2018_07_31_015516) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "Personas", force: :cascade do |t|
+    t.text "Nombre_usuario"
+    t.text "Documento"
+    t.datetime "Fecha_creacion"
+  end
+
   create_table "TipoDonacion", force: :cascade do |t|
     t.integer "IdTipoDonacion"
     t.text "Desc_Tipo_Donacion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "administradors", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "nombre_id"
+  end
+
+  create_table "administradors_servidors", id: false, force: :cascade do |t|
+    t.integer "administrador_id"
+    t.integer "servidor_id"
+    t.index ["administrador_id", "servidor_id"], name: "admin_index"
+  end
+
+  create_table "as", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "direccion_ips", force: :cascade do |t|
+    t.string "nombre", limit: 25, null: false
+    t.string "apellidos", limit: 50, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "servidor_id"
+  end
+
+  create_table "nombres", force: :cascade do |t|
+    t.string "nombre", limit: 25, null: false
+    t.string "apellidos", limit: 50, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "servidors", force: :cascade do |t|
+    t.string "nombre", limit: 50, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
