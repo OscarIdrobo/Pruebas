@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_04_013819) do
+ActiveRecord::Schema.define(version: 2018_08_04_021815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,14 @@ ActiveRecord::Schema.define(version: 2018_08_04_013819) do
     t.datetime "Fecha_creacion"
     t.text "Estado"
     t.text "Rol"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
+    t.string "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "ConexionFundacionTipos", "\"Fundaciones\"", column: "Fundacion_id"
