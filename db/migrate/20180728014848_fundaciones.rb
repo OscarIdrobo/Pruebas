@@ -1,7 +1,8 @@
 class Fundaciones < ActiveRecord::Migration[5.2]
   def change
     create_table :Fundaciones do |t|
-      #t.integer :IdFundaciones
+      t.integer :Banco_id
+      t.integer :Usuario_id #Usuario encargado
       t.text :NombreFundacion
       t.text :NitFundacion
       #enum TipoFundacion: { AM: 'adulto mayor', DR: 'drogadictos', NPI: 'niños primera infancia', AD: 'adolecentes', PV: 'poblacion vulnerable' }
@@ -9,7 +10,6 @@ class Fundaciones < ActiveRecord::Migration[5.2]
       t.text :DirFundacion
       t.text :LatDirFundacion
       t.text :LonDirFundacion
-      t.integer :IdUsuarioEncargado
       t.decimal :TelFundacion
       t.decimal :CelFundacion
       t.text :CorreoFundacion
@@ -17,7 +17,6 @@ class Fundaciones < ActiveRecord::Migration[5.2]
       t.text :ImagenLogo
       #enum TipoCuenta: { A: 'Cuenta de Ahorros', C: 'Cuenta Corriente' }
       t.text :NumeroCuenta
-      t.integer :IdBanco  
       t.text :Descripcion
        
       t.timestamps null: false

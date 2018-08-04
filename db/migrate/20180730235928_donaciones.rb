@@ -1,10 +1,10 @@
-class Donacion < ActiveRecord::Migration[5.2]
+class Donaciones < ActiveRecord::Migration[5.2]
   def change
-    create_table :Donacion do |t|
-      #t.integer :IdDonar
-      #t.integer :IdTipoDonacion
-      #t.integer :IdUsuarioDonador 
-      #t.integer :IdFundacionaDonar 
+    create_table :Donaciones do |t|
+      t.integer :TipoDonacion_id
+      t.integer :Usuario_id # Usuario a donar 
+      t.integer :Fundacione_id # Fundacion a donar
+      t.integer :Objeto_id
       t.text :DireccionReclamarDonacion 
       t.text :Latituddirreclamardonacion 
       t.text :LongitudDirReclamarDonacion
@@ -12,7 +12,6 @@ class Donacion < ActiveRecord::Migration[5.2]
       t.text :EstadoDonacion
       t.decimal :MontoDonar
       t.text :ImagenConsignacion
-      t.integer :IdObjeto
       t.text :DescripcionObjeto
       t.datetime :TiempoVoluntariado
               
