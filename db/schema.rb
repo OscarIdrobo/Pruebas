@@ -10,36 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_03_035602) do
+ActiveRecord::Schema.define(version: 2018_08_04_013819) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "Bancos", force: :cascade do |t|
-    t.integer "IdBanco"
     t.text "NombreBanco"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "Carros", force: :cascade do |t|
-    t.text "Nombre_usuario"
-    t.text "Documento"
-    t.datetime "Fecha_creacion"
-  end
-
-  create_table "ConexionFundacionTipo", force: :cascade do |t|
-    t.integer "IdFundacion"
-    t.integer "IdTipoDonacion"
+  create_table "ConexionFundacionTipos", force: :cascade do |t|
+    t.integer "Fundacion_id"
+    t.integer "TipoDonacion_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "Donacion", force: :cascade do |t|
-    t.integer "IdDonar"
-    t.integer "IdTipoDonacion"
-    t.integer "IdUsuarioDonador"
-    t.integer "IdFundacionaDonar"
+  create_table "Donaciones", force: :cascade do |t|
+    t.integer "TipoDonacion_id"
+    t.integer "Usuario_id"
+    t.integer "Fundacion_id"
+    t.integer "Objeto_id"
     t.text "DireccionReclamarDonacion"
     t.text "Latituddirreclamardonacion"
     t.text "LongitudDirReclamarDonacion"
@@ -47,7 +40,6 @@ ActiveRecord::Schema.define(version: 2018_08_03_035602) do
     t.text "EstadoDonacion"
     t.decimal "MontoDonar"
     t.text "ImagenConsignacion"
-    t.integer "IdObjeto"
     t.text "DescripcionObjeto"
     t.datetime "TiempoVoluntariado"
     t.datetime "created_at", null: false
@@ -55,99 +47,38 @@ ActiveRecord::Schema.define(version: 2018_08_03_035602) do
   end
 
   create_table "Fundaciones", force: :cascade do |t|
-    t.integer "IdFundacion"
+    t.integer "Banco_id"
+    t.integer "Usuario_id"
     t.text "NombreFundacion"
     t.text "NitFundacion"
-    t.text "TipoFundacion"
     t.datetime "FechaCreacion"
     t.text "DirFundacion"
     t.text "LatDirFundacion"
     t.text "LonDirFundacion"
-    t.integer "IdUsuarioEncargado"
     t.decimal "TelFundacion"
     t.decimal "CelFundacion"
     t.text "CorreoFundacion"
-    t.text "Estado"
     t.text "ImagenLogo"
-    t.text "TipoCuenta"
     t.text "NumeroCuenta"
-    t.integer "IdBanco"
     t.text "Descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "IdFundaciones_id"
-    t.bigint "IdFundacion_id"
-    t.index ["IdFundacion_id"], name: "index_Fundaciones_on_IdFundacion_id"
-    t.index ["IdFundaciones_id"], name: "index_Fundaciones_on_IdFundaciones_id"
   end
 
-  create_table "Lamparas", force: :cascade do |t|
-    t.text "Nombre_usuario"
-    t.text "Documento"
-    t.datetime "Fecha_creacion"
-  end
-
-  create_table "Objeto", force: :cascade do |t|
-    t.integer "IdObjeto"
+  create_table "Objetos", force: :cascade do |t|
     t.text "Nombre_Objeto"
     t.text "Descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "Personas", force: :cascade do |t|
-    t.text "Nombre_usuario"
-    t.text "Documento"
-    t.datetime "Fecha_creacion"
-  end
-
-  create_table "TipoDonacion", force: :cascade do |t|
-    t.integer "IdTipoDonacion"
+  create_table "TipoDonaciones", force: :cascade do |t|
     t.text "Desc_Tipo_Donacion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "administradors", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "nombre_id"
-  end
-
-  create_table "administradors_servidors", id: false, force: :cascade do |t|
-    t.integer "administrador_id"
-    t.integer "servidor_id"
-    t.index ["administrador_id", "servidor_id"], name: "admin_index"
-  end
-
-  create_table "as", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "direccion_ips", force: :cascade do |t|
-    t.string "nombre", limit: 25, null: false
-    t.string "apellidos", limit: 50, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "servidor_id"
-  end
-
-  create_table "nombres", force: :cascade do |t|
-    t.string "nombre", limit: 25, null: false
-    t.string "apellidos", limit: 50, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "servidors", force: :cascade do |t|
-    t.string "nombre", limit: 50, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "usuarios", force: :cascade do |t|
-    t.integer "Idusuarios"
+  create_table "Usuarios", id: :bigint, default: -> { "nextval('usuarios_id_seq'::regclass)" }, force: :cascade do |t|
     t.text "Nombre_usuario"
     t.text "Apellido_usuario"
     t.text "Tipo_documento"
@@ -163,4 +94,12 @@ ActiveRecord::Schema.define(version: 2018_08_03_035602) do
     t.text "Rol"
   end
 
+  add_foreign_key "ConexionFundacionTipos", "\"Fundaciones\"", column: "Fundacion_id"
+  add_foreign_key "ConexionFundacionTipos", "\"TipoDonaciones\"", column: "TipoDonacion_id"
+  add_foreign_key "Donaciones", "\"Fundaciones\"", column: "Fundacion_id"
+  add_foreign_key "Donaciones", "\"Objetos\"", column: "Objeto_id"
+  add_foreign_key "Donaciones", "\"TipoDonaciones\"", column: "TipoDonacion_id"
+  add_foreign_key "Donaciones", "\"Usuarios\"", column: "Usuario_id"
+  add_foreign_key "Fundaciones", "\"Bancos\"", column: "Banco_id"
+  add_foreign_key "Fundaciones", "\"Usuarios\"", column: "Usuario_id"
 end
