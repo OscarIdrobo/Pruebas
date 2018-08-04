@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 2018_08_04_013819) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "Usuarios", id: :bigint, default: -> { "nextval('usuarios_id_seq'::regclass)" }, force: :cascade do |t|
+  create_table "Usuarios", force: :cascade do |t|
     t.text "Nombre_usuario"
     t.text "Apellido_usuario"
     t.text "Tipo_documento"

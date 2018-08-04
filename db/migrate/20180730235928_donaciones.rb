@@ -3,7 +3,7 @@ class Donaciones < ActiveRecord::Migration[5.2]
     create_table :Donaciones do |t|
       t.integer :TipoDonacion_id
       t.integer :Usuario_id # Usuario a donar 
-      t.integer :Fundacione_id # Fundacion a donar
+      t.integer :Fundacion_id # Fundacion a donar
       t.integer :Objeto_id
       t.text :DireccionReclamarDonacion 
       t.text :Latituddirreclamardonacion 
