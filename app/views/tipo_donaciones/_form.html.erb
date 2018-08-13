@@ -1,0 +1,22 @@
+<%= form_with(model: tipo_donacione, local: true) do |form| %>
+  <% if tipo_donacione.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tipo_donacione.errors.count, "error") %> prohibited this tipo_donacione from being saved:</h2>
+
+      <ul>
+      <% tipo_donacione.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Desc_Tipo_Donacion %>
+    <%= form.text_field :Desc_Tipo_Donacion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

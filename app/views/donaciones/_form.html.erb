@@ -1,0 +1,82 @@
+<%= form_with(model: donacione, local: true) do |form| %>
+  <% if donacione.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(donacione.errors.count, "error") %> prohibited this donacione from being saved:</h2>
+
+      <ul>
+      <% donacione.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :TipoDonacion_id %>
+    <%= form.text_field :TipoDonacion_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Usuario_id %>
+    <%= form.text_field :Usuario_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Fundacion_id %>
+    <%= form.text_field :Fundacion_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Objeto_id %>
+    <%= form.text_field :Objeto_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :DireccionReclamarDonacion %>
+    <%= form.text_field :DireccionReclamarDonacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Latituddirreclamardonacion %>
+    <%= form.text_field :Latituddirreclamardonacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :LongitudDirReclamarDonacion %>
+    <%= form.text_field :LongitudDirReclamarDonacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :TiempoEsperaDonador %>
+    <%= form.text_field :TiempoEsperaDonador %>
+  </div>
+
+  <div class="field">
+    <%= form.label :EstadoDonacion %>
+    <%= form.text_field :EstadoDonacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :MontoDonar %>
+    <%= form.text_field :MontoDonar %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ImagenConsignacion %>
+    <%= form.text_field :ImagenConsignacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :DescripcionObjeto %>
+    <%= form.text_field :DescripcionObjeto %>
+  </div>
+
+  <div class="field">
+    <%= form.label :TiempoVoluntariado %>
+    <%= form.text_field :TiempoVoluntariado %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

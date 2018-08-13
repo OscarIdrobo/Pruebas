@@ -1,0 +1,2 @@
+class Fundacione < ApplicationRecord
+end

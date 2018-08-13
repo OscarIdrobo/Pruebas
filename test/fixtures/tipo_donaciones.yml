@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Desc_Tipo_Donacion: MyString
+
+two:
+  Desc_Tipo_Donacion: MyString
