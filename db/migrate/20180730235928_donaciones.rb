@@ -1,6 +1,6 @@
-class Donaciones < ActiveRecord::Migration[5.2]
+class donaciones < ActiveRecord::Migration[5.2]
   def change
-    create_table :Donaciones do |t|
+    create_table :donaciones do |t|
       t.integer :TipoDonacion_id
       t.integer :Usuario_id # Usuario a donar 
       t.integer :Fundacion_id # Fundacion a donar

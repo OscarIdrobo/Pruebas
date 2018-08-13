@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre usuario:</strong>
+  <%= @usuario.Nombre_usuario %>
+</p>
+
+<p>
+  <strong>Apellido usuario:</strong>
+  <%= @usuario.Apellido_usuario %>
+</p>
+
+<p>
+  <strong>Tipo documento:</strong>
+  <%= @usuario.Tipo_documento %>
+</p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @usuario.Documento %>
+</p>
+
+<p>
+  <strong>Cel personal:</strong>
+  <%= @usuario.Cel_personal %>
+</p>
+
+<p>
+  <strong>Correo personal:</strong>
+  <%= @usuario.Correo_personal %>
+</p>
+
+<p>
+  <strong>Contrasena:</strong>
+  <%= @usuario.Contrasena %>
+</p>
+
+<p>
+  <strong>Direccion residencia:</strong>
+  <%= @usuario.Direccion_residencia %>
+</p>
+
+<p>
+  <strong>Latitud dir residencia:</strong>
+  <%= @usuario.Latitud_dir_residencia %>
+</p>
+
+<p>
+  <strong>Longitud dir encargado:</strong>
+  <%= @usuario.Longitud_dir_encargado %>
+</p>
+
+<p>
+  <strong>Fecha creacion:</strong>
+  <%= @usuario.Fecha_creacion %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @usuario.Estado %>
+</p>
+
+<p>
+  <strong>Rol:</strong>
+  <%= @usuario.Rol %>
+</p>
+
+<%= link_to 'Edit', edit_usuario_path(@usuario) %> |
+<%= link_to 'Back', usuarios_path %>
