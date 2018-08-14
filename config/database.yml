@@ -28,6 +28,6 @@ test:
   <<: *default
   database: pruebas_fundasoft
 #Nombre base de datos Prodcuccion
-#production:
-#  <<: *default
-#  database: 
+production:
+  <<: *default
+  database: 
