@@ -1,7 +1,7 @@
-class Fundaciones < ActiveRecord::Migration[5.2]
+class fundaciones < ActiveRecord::Migration[5.2]
   def change
-    create_table :Fundaciones do |t|
-      t.integer :Banco_id
+    create_table :fundaciones do |t|
+      t.integer :banco_id
       t.integer :Usuario_id #Usuario encargado
       t.text :NombreFundacion
       t.text :NitFundacion

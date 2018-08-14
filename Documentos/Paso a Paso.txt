@@ -1,0 +1,20 @@
+1. Se ejecuta el comando:
+
+rails g scaffold Bancos NombreBanco --skip-migration --force
+rails db:migrate
+
+Para crear las vistas de la tabla Bancos
+
+
+* No funciono el ejecutar el scanfoldd asi que ejecute estos comandos para recrear base de datso y funciono.
+
+rake db:drop
+rake db:create
+rake db:migrate
+
+
+
+rails destroy scaffold Objetos
+
+rails g scaffold Objetos Nombre_Objeto Descripcion
+rails db:migrate

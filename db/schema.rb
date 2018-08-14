@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_04_013819) do
+ActiveRecord::Schema.define(version: 2018_08_11_013830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,6 +92,25 @@ ActiveRecord::Schema.define(version: 2018_08_04_013819) do
     t.datetime "Fecha_creacion"
     t.text "Estado"
     t.text "Rol"
+  end
+
+  create_table "bancos", force: :cascade do |t|
+    t.string "NombreBanco"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "destroys", force: :cascade do |t|
+    t.string "Bancos"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "objetos", force: :cascade do |t|
+    t.string "Nombre_Objeto"
+    t.string "Descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "ConexionFundacionTipos", "\"Fundaciones\"", column: "Fundacion_id"
