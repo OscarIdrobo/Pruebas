@@ -1,6 +1,6 @@
 class LlaveBancoFundaciones < ActiveRecord::Migration[5.2]
   def change
-    add_foreign_key :fundaciones, :bancos # Muchas Fundaciones tienen el mismo banco
+    add_foreign_key :Fundaciones, :Bancos # Muchas Fundaciones tienen el mismo banco
    # add_foreign_key :Fundaciones, :Usuarios # Muchas Fundacones tienen el mismo Usuario
    # add_foreign_key :Donaciones, :Objetos # Muchas Donaciones tienen el mismo Objeto
    # add_foreign_key :Donaciones, :Usuarios # Muchas Donaciones tienen el mismo usuario

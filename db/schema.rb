@@ -10,29 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_08_11_013830) do
-=======
 ActiveRecord::Schema.define(version: 2018_08_04_021815) do
->>>>>>> 14cb8fd53047e1d7ef0677e7605daa5bc54fd2f6
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "Bancos", force: :cascade do |t|
+  create_table "bancos", force: :cascade do |t|
     t.text "NombreBanco"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "ConexionFundacionTipos", force: :cascade do |t|
+  create_table "conexionfundaciontipos", force: :cascade do |t|
     t.integer "Fundacion_id"
     t.integer "TipoDonacion_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "Donaciones", force: :cascade do |t|
+  create_table "donaciones", force: :cascade do |t|
     t.integer "TipoDonacion_id"
     t.integer "Usuario_id"
     t.integer "Fundacion_id"
@@ -50,7 +46,7 @@ ActiveRecord::Schema.define(version: 2018_08_04_021815) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "Fundaciones", force: :cascade do |t|
+  create_table "fundaciones", force: :cascade do |t|
     t.integer "Banco_id"
     t.integer "Usuario_id"
     t.text "NombreFundacion"
@@ -69,20 +65,20 @@ ActiveRecord::Schema.define(version: 2018_08_04_021815) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "Objetos", force: :cascade do |t|
+  create_table "objetos", force: :cascade do |t|
     t.text "Nombre_Objeto"
     t.text "Descripcion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "TipoDonaciones", force: :cascade do |t|
+  create_table "tipoDonaciones", force: :cascade do |t|
     t.text "Desc_Tipo_Donacion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "Usuarios", force: :cascade do |t|
+  create_table "usuarios", force: :cascade do |t|
     t.text "Nombre_usuario"
     t.text "Apellido_usuario"
     t.text "Tipo_documento"
@@ -98,38 +94,20 @@ ActiveRecord::Schema.define(version: 2018_08_04_021815) do
     t.text "Rol"
   end
 
-<<<<<<< HEAD
-  create_table "bancos", force: :cascade do |t|
-    t.string "NombreBanco"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "destroys", force: :cascade do |t|
-    t.string "Bancos"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "objetos", force: :cascade do |t|
-    t.string "Nombre_Objeto"
-    t.string "Descripcion"
-=======
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password"
     t.string "username"
->>>>>>> 14cb8fd53047e1d7ef0677e7605daa5bc54fd2f6
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "ConexionFundacionTipos", "\"Fundaciones\"", column: "Fundacion_id"
-  add_foreign_key "ConexionFundacionTipos", "\"TipoDonaciones\"", column: "TipoDonacion_id"
-  add_foreign_key "Donaciones", "\"Fundaciones\"", column: "Fundacion_id"
-  add_foreign_key "Donaciones", "\"Objetos\"", column: "Objeto_id"
-  add_foreign_key "Donaciones", "\"TipoDonaciones\"", column: "TipoDonacion_id"
-  add_foreign_key "Donaciones", "\"Usuarios\"", column: "Usuario_id"
-  add_foreign_key "Fundaciones", "\"Bancos\"", column: "Banco_id"
-  add_foreign_key "Fundaciones", "\"Usuarios\"", column: "Usuario_id"
+  add_foreign_key "conexionfundaciontipos", "\"fundaciones\"", column: "Fundacion_id"
+  add_foreign_key "conexionfundaciontipos", "\"tipoDonaciones\"", column: "TipoDonacion_id"
+  add_foreign_key "donaciones", "\"fundaciones\"", column: "Fundacion_id"
+  add_foreign_key "donaciones", "\"objetos\"", column: "Objeto_id"
+  add_foreign_key "donaciones", "\"tipoDonaciones\"", column: "TipoDonacion_id"
+  add_foreign_key "donaciones", "\"usuarios\"", column: "Usuario_id"
+  add_foreign_key "fundaciones", "\"bancos\"", column: "Banco_id"
+  add_foreign_key "fundaciones", "\"usuarios\"", column: "Usuario_id"
 end
