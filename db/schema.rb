@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_08_11_013830) do
+=======
+ActiveRecord::Schema.define(version: 2018_08_04_021815) do
+>>>>>>> 14cb8fd53047e1d7ef0677e7605daa5bc54fd2f6
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,6 +98,7 @@ ActiveRecord::Schema.define(version: 2018_08_11_013830) do
     t.text "Rol"
   end
 
+<<<<<<< HEAD
   create_table "bancos", force: :cascade do |t|
     t.string "NombreBanco"
     t.datetime "created_at", null: false
@@ -109,6 +114,12 @@ ActiveRecord::Schema.define(version: 2018_08_11_013830) do
   create_table "objetos", force: :cascade do |t|
     t.string "Nombre_Objeto"
     t.string "Descripcion"
+=======
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
+    t.string "username"
+>>>>>>> 14cb8fd53047e1d7ef0677e7605daa5bc54fd2f6
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

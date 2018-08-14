@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Banco_id: MyString
+  Usuario_id: MyString
+  NombreFundacion: MyString
+  NitFundacion: MyString
+  FechaCreacion: MyString
+  DirFundacion: MyString
+  LatDirFundacion: MyString
+  LonDirFundacion: MyString
+  TelFundacion: MyString
+  CelFundacion: MyString
+  CorreoFundacion: MyString
+  ImagenLogo: MyString
+  NumeroCuenta: MyString
+  Descripcion: MyString
+
+two:
+  Banco_id: MyString
+  Usuario_id: MyString
+  NombreFundacion: MyString
+  NitFundacion: MyString
+  FechaCreacion: MyString
+  DirFundacion: MyString
+  LatDirFundacion: MyString
+  LonDirFundacion: MyString
+  TelFundacion: MyString
+  CelFundacion: MyString
+  CorreoFundacion: MyString
+  ImagenLogo: MyString
+  NumeroCuenta: MyString
+  Descripcion: MyString

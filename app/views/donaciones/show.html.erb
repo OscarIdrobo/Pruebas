@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipodonacion:</strong>
+  <%= @donacione.TipoDonacion_id %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @donacione.Usuario_id %>
+</p>
+
+<p>
+  <strong>Fundacion:</strong>
+  <%= @donacione.Fundacion_id %>
+</p>
+
+<p>
+  <strong>Objeto:</strong>
+  <%= @donacione.Objeto_id %>
+</p>
+
+<p>
+  <strong>Direccionreclamardonacion:</strong>
+  <%= @donacione.DireccionReclamarDonacion %>
+</p>
+
+<p>
+  <strong>Latituddirreclamardonacion:</strong>
+  <%= @donacione.Latituddirreclamardonacion %>
+</p>
+
+<p>
+  <strong>Longituddirreclamardonacion:</strong>
+  <%= @donacione.LongitudDirReclamarDonacion %>
+</p>
+
+<p>
+  <strong>Tiempoesperadonador:</strong>
+  <%= @donacione.TiempoEsperaDonador %>
+</p>
+
+<p>
+  <strong>Estadodonacion:</strong>
+  <%= @donacione.EstadoDonacion %>
+</p>
+
+<p>
+  <strong>Montodonar:</strong>
+  <%= @donacione.MontoDonar %>
+</p>
+
+<p>
+  <strong>Imagenconsignacion:</strong>
+  <%= @donacione.ImagenConsignacion %>
+</p>
+
+<p>
+  <strong>Descripcionobjeto:</strong>
+  <%= @donacione.DescripcionObjeto %>
+</p>
+
+<p>
+  <strong>Tiempovoluntariado:</strong>
+  <%= @donacione.TiempoVoluntariado %>
+</p>
+
+<%= link_to 'Edit', edit_donacione_path(@donacione) %> |
+<%= link_to 'Back', donaciones_path %>

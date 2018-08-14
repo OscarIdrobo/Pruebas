@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Donaciones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tipodonacion</th>
+      <th>Usuario</th>
+      <th>Fundacion</th>
+      <th>Objeto</th>
+      <th>Direccionreclamardonacion</th>
+      <th>Latituddirreclamardonacion</th>
+      <th>Longituddirreclamardonacion</th>
+      <th>Tiempoesperadonador</th>
+      <th>Estadodonacion</th>
+      <th>Montodonar</th>
+      <th>Imagenconsignacion</th>
+      <th>Descripcionobjeto</th>
+      <th>Tiempovoluntariado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @donaciones.each do |donacione| %>
+      <tr>
+        <td><%= donacione.TipoDonacion_id %></td>
+        <td><%= donacione.Usuario_id %></td>
+        <td><%= donacione.Fundacion_id %></td>
+        <td><%= donacione.Objeto_id %></td>
+        <td><%= donacione.DireccionReclamarDonacion %></td>
+        <td><%= donacione.Latituddirreclamardonacion %></td>
+        <td><%= donacione.LongitudDirReclamarDonacion %></td>
+        <td><%= donacione.TiempoEsperaDonador %></td>
+        <td><%= donacione.EstadoDonacion %></td>
+        <td><%= donacione.MontoDonar %></td>
+        <td><%= donacione.ImagenConsignacion %></td>
+        <td><%= donacione.DescripcionObjeto %></td>
+        <td><%= donacione.TiempoVoluntariado %></td>
+        <td><%= link_to 'Show', donacione %></td>
+        <td><%= link_to 'Edit', edit_donacione_path(donacione) %></td>
+        <td><%= link_to 'Destroy', donacione, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Donacione', new_donacione_path %>

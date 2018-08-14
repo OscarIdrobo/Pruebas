@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  TipoDonacion_id: MyString
+  Usuario_id: MyString
+  Fundacion_id: MyString
+  Objeto_id: MyString
+  DireccionReclamarDonacion: MyString
+  Latituddirreclamardonacion: MyString
+  LongitudDirReclamarDonacion: MyString
+  TiempoEsperaDonador: MyString
+  EstadoDonacion: MyString
+  MontoDonar: MyString
+  ImagenConsignacion: MyString
+  DescripcionObjeto: MyString
+  TiempoVoluntariado: MyString
+
+two:
+  TipoDonacion_id: MyString
+  Usuario_id: MyString
+  Fundacion_id: MyString
+  Objeto_id: MyString
+  DireccionReclamarDonacion: MyString
+  Latituddirreclamardonacion: MyString
+  LongitudDirReclamarDonacion: MyString
+  TiempoEsperaDonador: MyString
+  EstadoDonacion: MyString
+  MontoDonar: MyString
+  ImagenConsignacion: MyString
+  DescripcionObjeto: MyString
+  TiempoVoluntariado: MyString

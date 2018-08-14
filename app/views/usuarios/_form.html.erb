@@ -1,0 +1,82 @@
+<%= form_with(model: usuario, local: true) do |form| %>
+  <% if usuario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+
+      <ul>
+      <% usuario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Nombre_usuario %>
+    <%= form.text_field :Nombre_usuario %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Apellido_usuario %>
+    <%= form.text_field :Apellido_usuario %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Tipo_documento %>
+    <%= form.text_field :Tipo_documento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Documento %>
+    <%= form.text_field :Documento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Cel_personal %>
+    <%= form.text_field :Cel_personal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Correo_personal %>
+    <%= form.text_field :Correo_personal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Contrasena %>
+    <%= form.text_field :Contrasena %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Direccion_residencia %>
+    <%= form.text_field :Direccion_residencia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Latitud_dir_residencia %>
+    <%= form.text_field :Latitud_dir_residencia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Longitud_dir_encargado %>
+    <%= form.text_field :Longitud_dir_encargado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Fecha_creacion %>
+    <%= form.text_field :Fecha_creacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Estado %>
+    <%= form.text_field :Estado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Rol %>
+    <%= form.text_field :Rol %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

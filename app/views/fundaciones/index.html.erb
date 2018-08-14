@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fundaciones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Banco</th>
+      <th>Usuario</th>
+      <th>Nombrefundacion</th>
+      <th>Nitfundacion</th>
+      <th>Fechacreacion</th>
+      <th>Dirfundacion</th>
+      <th>Latdirfundacion</th>
+      <th>Londirfundacion</th>
+      <th>Telfundacion</th>
+      <th>Celfundacion</th>
+      <th>Correofundacion</th>
+      <th>Imagenlogo</th>
+      <th>Numerocuenta</th>
+      <th>Descripcion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fundaciones.each do |fundacione| %>
+      <tr>
+        <td><%= fundacione.Banco_id %></td>
+        <td><%= fundacione.Usuario_id %></td>
+        <td><%= fundacione.NombreFundacion %></td>
+        <td><%= fundacione.NitFundacion %></td>
+        <td><%= fundacione.FechaCreacion %></td>
+        <td><%= fundacione.DirFundacion %></td>
+        <td><%= fundacione.LatDirFundacion %></td>
+        <td><%= fundacione.LonDirFundacion %></td>
+        <td><%= fundacione.TelFundacion %></td>
+        <td><%= fundacione.CelFundacion %></td>
+        <td><%= fundacione.CorreoFundacion %></td>
+        <td><%= fundacione.ImagenLogo %></td>
+        <td><%= fundacione.NumeroCuenta %></td>
+        <td><%= fundacione.Descripcion %></td>
+        <td><%= link_to 'Show', fundacione %></td>
+        <td><%= link_to 'Edit', edit_fundacione_path(fundacione) %></td>
+        <td><%= link_to 'Destroy', fundacione, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fundacione', new_fundacione_path %>
