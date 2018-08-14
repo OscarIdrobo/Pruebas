@@ -10,7 +10,7 @@ class donaciones < ActiveRecord::Migration[5.2]
       t.text :LongitudDirReclamarDonacion
       t.datetime :TiempoEsperaDonador
       t.text :EstadoDonacion
-      t.decimal :MontoDonar
+      t.decimal :MontoDonar 
       t.text :ImagenConsignacion
       t.text :DescripcionObjeto
       t.datetime :TiempoVoluntariado
